@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function Form(props) {
+function ContactForm({ addContact }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -9,14 +8,15 @@ function Form(props) {
     e.preventDefault();
 
     let newContact = {
-      name,
-      email,
+      name: name,
+      email: email,
     };
 
-    props.addContact(newContact);
+    addContact(newContact);
     setName("");
     setEmail("");
   };
+
   return (
     <form onSubmit={addContactSubmit}>
       <input
@@ -36,4 +36,4 @@ function Form(props) {
   );
 }
 
-export default Form;
+export default ContactForm;
