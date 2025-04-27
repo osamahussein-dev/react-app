@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/contactItem.css";
 
 const ContactItem = ({ contact, deleteContact }) => {
   return (
