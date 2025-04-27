@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ContactForm from "./components/contactForm";
+import ContactList from "./components/contactList";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -20,6 +21,7 @@ function App() {
     <div>
       <h1>Contact Manager App</h1>
       <ContactForm addContact={addContact} />
+      <ContactList contacts={contacts} />
     </div>
   );
 }
