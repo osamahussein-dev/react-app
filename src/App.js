@@ -9,6 +9,10 @@ function App() {
     setContacts([...contacts, contact]);
   };
 
+  const deleteContact = (index) => {
+    setContacts(contacts.filter((_, i) => i !== index));
+  };
+
   useEffect(() => {
     console.log(contacts);
     if (contacts.length > 0) {
@@ -21,7 +25,7 @@ function App() {
     <div>
       <h1>Contact Manager App</h1>
       <ContactForm addContact={addContact} />
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} deleteContact={deleteContact} />
     </div>
   );
 }
